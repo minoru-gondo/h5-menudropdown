@@ -1,41 +1,39 @@
 var React = require('react');
 var h5dropdown = require('h5-dropdown');
-//require('./style/icondropdown.less');
+require('./icondropdown.less');
+
+var injectTapEventPlugin = require("react-tap-event-plugin");
+injectTapEventPlugin();
 
 var H5Menudropdown = React.createClass({
     propTypes: {
         items: React.PropTypes.array.isRequired,
+        onClick: React.PropTypes.func
     },
     mixins: [h5dropdown],
     render: function () {
 
         var props = {};
-        if(this.props.items){
-            if (this.props.name == "hamburger_pontos")
-                props.className = "fa fa-ellipsis-v";
-            else
-                props.className = this.props.name;
-        }
-        else if(this.props.className)
-            props.className = this.props.className;
-        else
-        props.className = this.props.iconClassName;
+
+        props.className = "fa fa-ellipsis-v";
+        props.menuDropDownItems = this.props.store.items;
         props.onTouchTap = this.toggleDropDown;
         var self = this;
         return (React.createElement('div', {}, [React.createElement('icon', props),
-            this.isDropDown() ?
+//            this.isDropDown() ?
                 <div className='h_iconDropDown_div'>
-                    {this.props.menuDropDownItens.map(function(item, idx, arrayDropDown){
+                    {props.menuDropDownItems.map(function(item, idx, arrayDropDown){
                         return(
                                 <div className='h_iconDropDown_itens' onClick={function(e){
                                         e.preventDefault();
                                                 self.closeDropDown();
-                                        self.props.onItemClick(self.props.indexItens, self.props.arrayItens, e, idx, arrayDropDown[idx]);
-                                }}>{item.text}</div>
+                                        self.props.onItemClick(arrayDropDown, e, idx, item.onClick);
+                                }}>{item.caption}</div>
                             )
                         })
                     }
-                </div> : null
+                </div>
+//            : null
         ]));
 
     }
