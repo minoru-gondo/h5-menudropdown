@@ -21,6 +21,7 @@
     "flowcheck-loader": "^1.0.0",
     "jsx-loader": "^0.13.2",
     "less-loader": "^2.2.0",
+    "react-tap-event-plugin": "^0.1.7",
     "style-loader": "^0.12.3"
   }
 }
