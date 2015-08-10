@@ -8,13 +8,13 @@ module.exports = function (library, expect, h5_test) {
             next();
         }).when('eu renderizar (.*)', function (caso, next) {
             h5_test.replace('___caso___', caso);
-            h5_test.file('app/input.view.js');
+            h5_test.file('app/exemplo.js');
             h5_test.serve('app/index.html');
             h5_test.pack('app', next);
         }).then('deverá ser exibido ([^\u0000]*)', function (spec, next) {
             expect(spec).to.be.an('string');
             h5_test.replace('___spec___', spec.replace(/\n/g, '\n    '));
-            h5_test.check('test/input.spec');
+            h5_test.check('test/homepage.spec');
             next();
         })
 };

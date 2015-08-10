@@ -9,7 +9,7 @@
   Então deverá ser exibido [spec]
   Exemplos:
     caso                | estado                   | spec
-    -----------------------------------------------------
-    3 opções && fechado | {caption: "QuickEdit"},  |
-                        | {caption: "Quick Docs"}, |
+    ----------------------------------------------------------------
+    3 opções && fechado | {caption: "QuickEdit"},  | body:
+                        | {caption: "Quick Docs"}, |   contains icon
                         | {caption: "Quick Edit"}  |

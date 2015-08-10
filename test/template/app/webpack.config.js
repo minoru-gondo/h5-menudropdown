@@ -1,7 +1,7 @@
 //var webpack = require('webpack');
 
 module.exports = {
-    entry: __dirname + "/exemplo.js",
+    entry: __dirname + "/dropdown.js",
     output: {
         path: __dirname,
         filename: "bundle.js"

@@ -21,6 +21,9 @@ var mock_store = {
         }
     ]
 };
+//var mock_store = {
+//    items: [___fields___]
+//};
 
 var Exemplo = React.createClass({
     render: function () {
