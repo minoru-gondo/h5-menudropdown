@@ -20,7 +20,7 @@ var mock_store = {
             }
         }
     ],
-    render: 'mobile'
+    render: 'desktop'
 };
 //var mock_store = {
 //    items: [___fields___]
