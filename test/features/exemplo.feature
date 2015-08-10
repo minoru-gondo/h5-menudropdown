@@ -6,11 +6,10 @@
   Cenário: Renderização do h5-menudropdown [caso]
   Dado que o estado da estória é [estado]
   Quando eu renderizar o [caso]
-  E eu clicar no icone
   Então deverá ser exibido [spec]
   Exemplos:
-    caso     | estado                   | spec
-    ------------------------------------------
-    3 opções | {caption: "QuickEdit"},  |
-             | {caption: "Quick Docs"}, |
-             | {caption: "Quick Edit"}  |
+    caso                | estado                   | spec
+    -----------------------------------------------------
+    3 opções && fechado | {caption: "QuickEdit"},  |
+                        | {caption: "Quick Docs"}, |
+                        | {caption: "Quick Edit"}  |

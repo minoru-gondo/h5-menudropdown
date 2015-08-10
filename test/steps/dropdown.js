@@ -11,9 +11,6 @@ module.exports = function (library, expect, h5_test) {
             h5_test.file('app/input.view.js');
             h5_test.serve('app/index.html');
             h5_test.pack('app', next);
-        }).when('eu clicar no icone', function (next) {
-            h5_test.run('test/blur.js');
-            next();
         }).then('deverá ser exibido ([^\u0000]*)', function (spec, next) {
             expect(spec).to.be.an('string');
             h5_test.replace('___spec___', spec.replace(/\n/g, '\n    '));
