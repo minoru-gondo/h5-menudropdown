@@ -30,4 +30,4 @@ var Exemplo = React.createClass({
     }
 });
 
-React.render( < Exemplo / > , document.getElementById('app'));
+React.render(React.createElement(Exemplo), document.getElementById('app'));
