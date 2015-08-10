@@ -20,12 +20,13 @@ var H5Menudropdown = React.createClass({
         props.onTouchTap = this.toggleDropDown;
         var self = this;
         return (React.createElement('div', {}, [React.createElement('icon', props),
-//            this.isDropDown() ?
+            this.isDropDown() ?
                 <div className='h_iconDropDown_div'>
                     {props.menuDropDownItems.map(function(item, idx, arrayDropDown){
                         return(
                                 <div className='h_iconDropDown_itens' onClick={function(e){
                                         e.preventDefault();
+                                        self._click();
                                                 self.closeDropDown();
                                         self.props.onItemClick(arrayDropDown, e, idx, item.onClick);
                                 }}>{item.caption}</div>
@@ -33,14 +34,30 @@ var H5Menudropdown = React.createClass({
                         })
                     }
                 </div>
-//            : null
+            : null
         ]));
 
+    },
+       _click: function (e) {
+           for(var i = 0; i < this.props.store.items.length; i++ )
+            this.props.store.items[i].onClick();
+            this.setState({
+
+            });
     }
 
 });
 
 module.exports = H5Menudropdown;
+
+
+
+
+
+
+
+
+
 
 //
 //
