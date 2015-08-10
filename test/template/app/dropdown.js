@@ -22,6 +22,9 @@ var mock_store = {
     ],
     render: 'mobile'
 };
+//var mock_store = {
+//    items: [___fields___]
+//};
 
 var Exemplo = React.createClass({
     render: function () {
