@@ -8,7 +8,7 @@ module.exports = function (library, expect, h5_test) {
             next();
         }).when('eu renderizar (.*)', function (caso, next) {
             h5_test.replace('___caso___', caso);
-            h5_test.file('app/exemplo.js');
+            h5_test.file('app/dropdown.js');
             h5_test.serve('app/index.html');
             h5_test.pack('app', next);
         }).then('deverá ser exibido ([^\u0000]*)', function (spec, next) {
