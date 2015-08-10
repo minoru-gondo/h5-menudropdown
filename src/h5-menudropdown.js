@@ -15,20 +15,18 @@ var H5Menudropdown = React.createClass({
 
         var props = {};
         var props_Menu = {};
+        var width = document.getElementsByTagName('body');
 
-        if(this.props.store.render != 'desktop' && this.props.store.render != 'mobile' && this.props.store.render != undefined)
-            throw "O menudropdown não pode ter esse render";
-
-        if(this.props.store.render == 'desktop' || this.props.store.render == undefined) {
+        if(width[0].offsetWidth >= 502) {
             props_Menu.className = 'h_iconDropDown_menu_desktop';
             props.className = "fa fa-ellipsis-v fa-2x h_iconDropDown_desktop";
         }
 
-        if(this.props.store.render == 'mobile') {
+        else {
             props_Menu.className = 'h_iconDropDown_menu_mobile';
             props.className = "fa fa-ellipsis-v h_iconDropDown_mobile";
-        }
 
+        }
         props.menuDropDownItems = this.props.store.items;
         props.onTouchTap = this.toggleDropDown;
         var self = this;
@@ -59,7 +57,10 @@ var H5Menudropdown = React.createClass({
     _click: function (item) {
         item.onClick();
         this.setState({});
-    }
+    },
+    _setState: function(){
+        this.setState({});
+}
 
 });
 
