@@ -2,7 +2,7 @@
 
 module.exports = function (library, expect, h5_test) {
     library
-        .given('que o estado da estória é ([^\u0000]*)', function (estado, next) {
+        .given('que o esstado da estória é ([^\u0000]*)', function (estado, next) {
             expect(estado, 'estado').to.be.an('string');
             h5_test.replace('___fields___', estado);
             next();

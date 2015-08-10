@@ -1,27 +1,28 @@
 {
-  "name": "h5-menudropdown",
-  "version": "0.0.1",
-  "description": "",
-  "main": "src/h5-menudropdown.js",
-  "scripts": {
-    "test": "node node_modules/h5-test/bin/run"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/minoru-gondo/h5-menudropdown.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "react": "^0.13.3"
-  },
-  "devDependencies": {
-    "css-loader": "^0.14.4",
-    "flowcheck": "^0.2.7",
-    "flowcheck-loader": "^1.0.0",
-    "jsx-loader": "^0.13.2",
-    "less-loader": "^2.2.0",
-    "react-tap-event-plugin": "^0.1.7",
-    "style-loader": "^0.12.3"
-  }
+    "name": "h5-menudropdown",
+    "version": "0.0.1",
+    "description": "",
+    "main": "src/h5-menudropdown.js",
+    "scripts": {
+        "test": "node node_modules/h5-test/bin/run"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/minoru-gondo/h5-menudropdown.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "react": "^0.13.3"
+    },
+    "devDependencies": {
+        "css-loader": "^0.14.4",
+        "flowcheck": "^0.2.7",
+        "flowcheck-loader": "^1.0.0",
+        "h5-test": "latest",
+        "jsx-loader": "^0.13.2",
+        "less-loader": "^2.2.0",
+        "react-tap-event-plugin": "^0.1.7",
+        "style-loader": "^0.12.3"
+    }
 }
