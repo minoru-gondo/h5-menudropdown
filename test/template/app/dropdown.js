@@ -19,8 +19,7 @@ var mock_store = {
                 alert("Quick Docs");
             }
         }
-    ],
-    render: 'desktop'
+    ]
 };
 //var mock_store = {
 //    items: [___fields___]
