@@ -14,14 +14,27 @@ var H5Menudropdown = React.createClass({
     render: function () {
 
         var props = {};
+        var props_Menu = {};
 
-        props.className = "fa fa-ellipsis-v";
+        if(this.props.store.render != 'desktop' && this.props.store.render != 'mobile' && this.props.store.render != undefined)
+            throw "O menudropdown não pode ter esse render";
+
+        if(this.props.store.render == 'desktop' || this.props.store.render == undefined) {
+            props_Menu.className = 'h_iconDropDown_menu_desktop';
+            props.className = "fa fa-ellipsis-v fa-2x h_iconDropDown_desktop";
+        }
+
+        if(this.props.store.render == 'mobile') {
+            props_Menu.className = 'h_iconDropDown_menu_mobile';
+            props.className = "fa fa-ellipsis-v h_iconDropDown_mobile";
+        }
+
         props.menuDropDownItems = this.props.store.items;
         props.onTouchTap = this.toggleDropDown;
         var self = this;
         return (React.createElement('div', {}, [React.createElement('icon', props),
             this.isDropDown() ?
-                < div className = 'h_iconDropDown_div' >
+                < div className = {props_Menu.className} >
             {
                 props.menuDropDownItems.map(function (item, idx, arrayDropDown) {
                     return ( < div className = 'h_iconDropDown_itens'
@@ -99,7 +112,7 @@ module.exports = H5Menudropdown;
 //        var self = this;
 //        return (React.createElement('div', {}, [React.createElement('icon', props),
 //            this.isDropDown() ?
-//                <div className='h_iconDropDown_div'>
+//                <div className='h_iconDropDown_menu'>
 //                    {this.props.menuDropDownItens.map(function(item, idx, arrayDropDown){
 //                        return(
 //                                <div className='h_iconDropDown_itens' onClick={function(e){

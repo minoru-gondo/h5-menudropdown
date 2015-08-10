@@ -19,7 +19,8 @@ var mock_store = {
                 alert("Quick Docs");
             }
         }
-    ]
+    ],
+    render: 'mobile'
 };
 
 var Exemplo = React.createClass({
