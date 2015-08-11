@@ -7,13 +7,12 @@ injectTapEventPlugin();
 
 var H5Menudropdown = React.createClass({
     propTypes: {
-        items: React.PropTypes.array.isRequired,
-        onClick: React.PropTypes.func
+        menu: React.PropTypes.array.isRequired
     },
     mixins: [h5dropdown],
     render: function () {
-
-        var props = {};
+        console.log('render '+new Date().toString()+"  "+   this.isDropDown());
+        var props = {key:'icon'};
         var props_Menu = {};
         var width = document.getElementsByTagName('body');
 
@@ -27,40 +26,39 @@ var H5Menudropdown = React.createClass({
             props.className = "fa fa-ellipsis-v h_iconDropDown_mobile";
 
         }
-        props.menuDropDownItems = this.props.store.items;
+        props.menuDropDownItems = this.props.menu;
         props.onTouchTap = this.toggleDropDown;
         var self = this;
-        return (React.createElement('div', {}, [React.createElement('icon', props),
-            this.isDropDown() ?
-                < div className = {props_Menu.className} >
+
+        var dropDown = (this.isDropDown() ?
+                < div key="dropdown" className = {props_Menu.className} >
             {
                 props.menuDropDownItems.map(function (item, idx, arrayDropDown) {
-                    return ( < div className = 'h_iconDropDown_itens'
+                    return ( < div key={item.caption} className = 'h_iconDropDown_itens'
                         onClick = {
                             function (e) {
                                 e.preventDefault();
                                 self._click(item);
                                 self.closeDropDown();
-                                self.props.onItemClick(arrayDropDown, e, idx, item.onClick);
                             }
                         } > {
                             item.caption
                         } < /div>
                     )
                 })
-                    }
+            }
                 < /div>
-            : null
+            : null);
+
+        return (React.createElement('div', {}, [React.createElement('icon', props),
+            dropDown
         ]));
 
     },
     _click: function (item) {
         item.onClick();
         this.setState({});
-    },
-    _setState: function(){
-        this.setState({});
-}
+    }
 
 });
 

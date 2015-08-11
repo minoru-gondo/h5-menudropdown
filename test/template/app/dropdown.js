@@ -6,7 +6,7 @@ window.hsession = {
 };
 
 var mock_store = {
-    items: [
+    menu: [
         {
             caption: "QuickEdit",
             onClick: function clica() {
@@ -27,9 +27,9 @@ var mock_store = {
 
 var Exemplo = React.createClass({
     render: function () {
-        return React.createElement(Menudropdown, {
-            store: mock_store
-        });
+        return     React.createElement('div', {},[ 'exemplo menu drop down',
+        React.createElement(Menudropdown, {menu: mock_store.menu })
+        ]);
     }
 });
 
