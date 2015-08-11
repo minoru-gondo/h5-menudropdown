@@ -17,7 +17,7 @@ var H5Menudropdown = React.createClass({
         props.className = this.props.icon;
         props.onTouchTap = this.toggleDropDown;
         var self = this;
-
+        window.addEventListener('click', this.getClickPosition, false);
         var dropDown = (this.isDropDown() ?
                 < div key="dropdown" className = {props_Menu.className} >
             {
@@ -46,6 +46,10 @@ var H5Menudropdown = React.createClass({
     _click: function (item) {
         item.onClick();
         this.setState({});
+    },
+    getClickPosition: function(e) {
+            var xPosition = e.clientX;
+            var yPosition = e.clientY;
     }
 
 });
