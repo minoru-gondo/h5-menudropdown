@@ -11,22 +11,10 @@ var H5Menudropdown = React.createClass({
     },
     mixins: [h5dropdown],
     render: function () {
-        console.log('render '+new Date().toString()+"  "+   this.isDropDown());
         var props = {key:'icon'};
         var props_Menu = {};
-        var width = document.getElementsByTagName('body');
-
-        if(width[0].offsetWidth >= 502) {
-            props_Menu.className = 'h_iconDropDown_menu_desktop';
-            props.className = "fa fa-ellipsis-v fa-2x h_iconDropDown_desktop";
-        }
-
-        else {
-            props_Menu.className = 'h_iconDropDown_menu_mobile';
-            props.className = "fa fa-ellipsis-v h_iconDropDown_mobile";
-
-        }
         props.menuDropDownItems = this.props.menu;
+        props.className = this.props.icon;
         props.onTouchTap = this.toggleDropDown;
         var self = this;
 
