@@ -11,17 +11,22 @@ var H5Menudropdown = React.createClass({
     },
     mixins: [h5dropdown],
     render: function () {
-        var props = {key:'icon'};
+        var props = {
+            key: 'icon'
+        };
         var props_Menu = {};
         props.menuDropDownItems = this.props.menu;
         props.className = this.props.icon;
         props.onTouchTap = this.toggleDropDown;
         var self = this;
         var dropDown = (this.isDropDown() ?
-                < div key="dropdown" className = {props_Menu.className} >
-            {
+            < div key = "dropdown"
+            className = 'dropDownItens' > {
                 props.menuDropDownItems.map(function (item, idx, arrayDropDown) {
-                    return ( < div key={item.caption} className = 'h_iconDropDown_itens'
+                    return ( < div key = {
+                            item.caption
+                        }
+                        className = 'h_iconDropDown_itens'
                         onClick = {
                             function (e) {
                                 e.preventDefault();
@@ -33,9 +38,7 @@ var H5Menudropdown = React.createClass({
                         } < /div>
                     )
                 })
-            }
-                < /div>
-            : null);
+            } < /div> : null);
 
         return (React.createElement('div', {}, [React.createElement('icon', props),
             dropDown
