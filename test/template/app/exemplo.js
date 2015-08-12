@@ -4,7 +4,7 @@ var Menudropdown = require('../../../src/h5-menudropdown.js');
 window.hsession = {
     language: 'pt_br'
 };
-
+//
 //var mock_store = {
 //    menu: [
 //        {
@@ -49,10 +49,11 @@ var Exemplo = React.createClass({
                 icon: 'fa fa-ellipsis-v fa-2x',
                 menu: mock_store.menu,
                 left: 0,
-                top: undefined,
+                top: 19,
                 right: undefined,
-                bottom: 100 - 5
+                bottom: undefined
             })
+
            ]);
     }
 });
