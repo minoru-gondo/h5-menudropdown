@@ -62,7 +62,7 @@ var H5Menudropdown = React.createClass({
         props.onTouchTap = this.toggleDropDown;
         var self = this;
         var dropDown = (this.isDropDown() ?
-                < div key="dropdown" style ={props_Menu.style} className = {props_Menu.className} >
+                < div key="dropdown" style ={props_Menu.style} >
             {
                 props.menuDropDownItems.map(function (item, idx, arrayDropDown) {
                     return ( < div key={item.caption} className = 'h_iconDropDown_itens'
