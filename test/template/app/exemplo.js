@@ -44,7 +44,7 @@ var Exemplo = React.createClass({
 
 
         return React.createElement('div', {},[ 'exemplo menu drop down',
-                   React.createElement(Menudropdown, {icon: 'fa fa-ellipsis-v fa-2x', menu: mock_store.menu, left: 0, top: undefined, right: undefined, bottom: 100-5 })
+                   React.createElement(Menudropdown, {icon: 'fa fa-ellipsis-v fa-2x', menu: mock_store.menu, left: 30, top: undefined, right: undefined, bottom: 30 })
            ]);
     }
 });

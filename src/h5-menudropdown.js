@@ -15,10 +15,54 @@ var H5Menudropdown = React.createClass({
         var props_Menu = {};
         props.menuDropDownItems = this.props.menu;
         props.className = this.props.icon;
+        if(this.props.top != undefined && this.props.bottom != undefined){
+            throw "Escolha somente uma propriedade entre top e bottom";
+        }
+        if(this.props.left != undefined && this.props.right != undefined){
+            throw "Escolha somente uma propriedade entre left e right";
+        }
+        if(this.props.top != undefined && this.props.right != undefined || this.props.top != undefined && this.props.left != undefined) {
+        props.style = {
+            left : this.props.left,
+            right : this.props.right,
+            top: this.props.top,
+            bottom : this.props.bottom,
+            position: 'fixed',
+            cursor: 'pointer'
+        };
+        props_Menu.style = {
+            left : this.props.left,
+            right : this.props.right,
+            top: this.props.top + 32,
+            bottom: this.props.bottom,
+            position: 'fixed',
+            cursor: 'pointer'
+        };
+        }
+        if(this.props.bottom != undefined && this.props.right != undefined || this.props.bottom != undefined && this.props.left != undefined) {
+        props.style = {
+            left : this.props.left,
+            right : this.props.right,
+            top: this.props.top,
+            bottom : this.props.bottom,
+            position: 'fixed',
+            cursor: 'pointer'
+        };
+        props_Menu.style = {
+            left : this.props.left,
+            right : this.props.right,
+            top: this.props.top,
+            bottom: this.props.bottom + 32,
+            position: 'fixed',
+            cursor: 'pointer'
+        };
+        }
+
+        window.addEventListener('click', this.pegaPosition, false);
         props.onTouchTap = this.toggleDropDown;
         var self = this;
         var dropDown = (this.isDropDown() ?
-                < div key="dropdown" className = {props_Menu.className} >
+                < div key="dropdown" style ={props_Menu.style} className = {props_Menu.className} >
             {
                 props.menuDropDownItems.map(function (item, idx, arrayDropDown) {
                     return ( < div key={item.caption} className = 'h_iconDropDown_itens'
@@ -45,6 +89,11 @@ var H5Menudropdown = React.createClass({
     _click: function (item) {
         item.onClick();
         this.setState({});
+    },
+    pegaPosition: function(e){
+    var x = e.clientX;
+    var y = e.clientY;
+
     }
 
 });
