@@ -58,7 +58,6 @@ var H5Menudropdown = React.createClass({
         };
         }
 
-        window.addEventListener('click', this.pegaPosition, false);
         props.onTouchTap = this.toggleDropDown;
         var self = this;
         var dropDown = (this.isDropDown() ?
@@ -89,11 +88,6 @@ var H5Menudropdown = React.createClass({
     _click: function (item) {
         item.onClick();
         this.setState({});
-    },
-    pegaPosition: function(e){
-    var x = e.clientX;
-    var y = e.clientY;
-
     }
 
 });
