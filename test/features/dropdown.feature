@@ -9,18 +9,19 @@
   Então deverá ser exibido [spec]
   Exemplos:
     caso    | estado | spec
-    ------------------------------------------
+    ----------------------------------
     fechado |        | app:
             |        |   contains icon
-    ------------------------------------------
+    ----------------------------------
+    @only
     posição |        | icon:
-            |        |   below span 0 to 20 px
+            |        |   below span
             |        |   inside app
-    ------------------------------------------
+    ----------------------------------
     tamanho |        | icon:
             |        |   width 7 px
             |        |   height 32 px
-    ------------------------------------------
+    ----------------------------------
 
   Cenário: Renderização do h5-menudropdown [caso]
   Dado que o estado da estória é [estado]
