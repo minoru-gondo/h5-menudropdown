@@ -4,7 +4,7 @@ var Menudropdown = require('../../../src/h5-menudropdown.js');
 window.hsession = {
     language: 'pt_br'
 };
-//
+
 //var mock_store = {
 //    menu: [
 //        {
@@ -21,6 +21,7 @@ window.hsession = {
 //        }
 //    ]
 //};
+
 
 var mock_store = {
     menu: [___fields___]
@@ -47,11 +48,7 @@ var Exemplo = React.createClass({
         return React.createElement('div', {}, ['exemplo menu drop down',
                    React.createElement(Menudropdown, {
                 icon: 'fa fa-ellipsis-v fa-2x',
-                menu: mock_store.menu,
-                left: 0,
-                top: 19,
-                right: undefined,
-                bottom: undefined
+                menu: mock_store.menu
             })
 
            ]);

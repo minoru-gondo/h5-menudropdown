@@ -17,58 +17,14 @@ var H5Menudropdown = React.createClass({
                 var props_Menu = {};
                 props.menuDropDownItems = this.props.menu;
                 props.className = this.props.icon;
-                if (this.props.top != undefined && this.props.bottom != undefined) {
-                    throw "Escolha somente uma propriedade entre top e bottom";
-                }
-                if (this.props.left != undefined && this.props.right != undefined) {
-                    throw "Escolha somente uma propriedade entre left e right";
-                }
-                if (this.props.top != undefined && this.props.right != undefined || this.props.top != undefined && this.props.left != undefined) {
-                    props.style = {
-                        left: this.props.left,
-                        right: this.props.right,
-                        top: this.props.top,
-                        bottom: this.props.bottom,
-                        position: 'fixed',
-                        cursor: 'pointer'
-                    };
-                    props_Menu.style = {
-                        left: this.props.left,
-                        right: this.props.right,
-                        top: this.props.top + 32,
-                        bottom: this.props.bottom,
-                        position: 'fixed',
-                        cursor: 'pointer'
-                    };
-                }
-                if (this.props.bottom != undefined && this.props.right != undefined || this.props.bottom != undefined && this.props.left != undefined) {
-                    props.style = {
-                        left: this.props.left,
-                        right: this.props.right,
-                        top: this.props.top,
-                        bottom: this.props.bottom,
-                        position: 'fixed',
-                        cursor: 'pointer'
-                    };
-                    props_Menu.style = {
-                        left: this.props.left,
-                        right: this.props.right,
-                        top: this.props.top,
-                        bottom: this.props.bottom + 32,
-                        position: 'fixed',
-                        cursor: 'pointer'
-                    };
-                }
 
-                props.onTouchTap = this.toggleDropDown;
+
+                props.onClick = this.toggleDropDown;
                 var self = this;
                 var dropDown = (this.isDropDown() ?
 
                         < div key = "dropdown"
-                        className = 'dropDownItens'
-                        style = {
-                            props_Menu.style
-                        } > {
+                        className = 'dropDownItens' > {
 
                             props.menuDropDownItems.map(function (item, idx, arrayDropDown) {
                                 return ( < div key = {

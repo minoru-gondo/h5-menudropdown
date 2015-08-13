@@ -10,7 +10,10 @@ module.exports = function (library, expect, h5_test) {
             h5_test.serve('app/index.html');
             h5_test.pack('app', next);
         }).when('eu clicar no ícone', function (next) {
-            h5_test.run('test/click.js');
+            h5_test.run('test/clickIcon.js');
+            next();
+        }).when('eu clicar no item', function (next) {
+            h5_test.run('test/clickItem.js');
             next();
         }).then('deverá ser exibido ([^\u0000]*)', function (spec, next) {
             expect(spec).to.be.an('string');

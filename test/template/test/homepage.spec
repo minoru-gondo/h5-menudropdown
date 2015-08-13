@@ -1,8 +1,9 @@
 @objects
   icon   .fa-ellipsis-v
-  body   xpath   /html/body
   span   span
   body   body
+  app    #app
+  html   html
   itens  .dropDownItens
   item   .h_iconDropDown_itens
   
