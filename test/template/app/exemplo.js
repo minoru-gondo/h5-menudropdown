@@ -5,26 +5,25 @@ window.hsession = {
     language: 'pt_br'
 };
 
-//var mock_store = {
-//    menu: [
-//        {
-//            caption: "QuickEdit",
-//            onClick: function clica() {
-//                alert("QuickEdit");
-//            }
-//        },
-//        {
-//            caption: "Quick Docs",
-//            onClick: function clica() {
-//                alert("Quick Docs");
-//            }
-//        }
-//    ]
-//};
-
 var mock_store = {
-    menu: [___fields___]
+    menu: [
+        {
+            caption: "QuickEdit",
+            onClick: function clica() {
+                alert("QuickEdit");
+            }
+        },
+        {
+            caption: "Quick Docs",
+            onClick: function clica() {
+                alert("Quick Docs");
+            }
+        }
+    ]
 };
+//var mock_store = {
+//    menu: [___fields___]
+//};
 
 var Exemplo = React.createClass({
     render: function () {

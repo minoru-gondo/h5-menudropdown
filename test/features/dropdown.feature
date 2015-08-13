@@ -13,7 +13,6 @@
     fechado |        | app:
             |        |   contains icon
     ----------------------------------
-    @only
     posição |        | icon:
             |        |   below span
             |        |   inside app
