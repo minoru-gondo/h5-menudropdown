@@ -20,16 +20,12 @@ var H5Menudropdown = React.createClass({
 
 
                 props.onClick = this.toggleDropDown;
+                props.onBlur = this.closeDropDown;
                 var self = this;
                 var dropDown = (this.isDropDown() ?
 
                         < div key = "dropdown"
-                        className = 'dropDownItens'
-                        onblur = {
-                            function (e) {
-                                self.closeDropDown();
-                            }
-                        } > {
+                        className = 'dropDownItens' > {
 
                             props.menuDropDownItems.map(function (item, idx, arrayDropDown) {
                                 return ( < div key = {
