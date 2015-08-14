@@ -22,7 +22,6 @@ window.hsession = {
 //    ]
 //};
 
-
 var mock_store = {
     menu: [___fields___]
 };

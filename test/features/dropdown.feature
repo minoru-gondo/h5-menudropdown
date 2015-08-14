@@ -9,40 +9,43 @@
   Então deverá ser exibido [spec]
   Exemplos:
     caso    | estado | spec
-    ------------------------------------------
+    ----------------------------------
     fechado |        | app:
             |        |   contains icon
-    ------------------------------------------
+    ----------------------------------
     posição |        | icon:
-            |        |   below span 0 to 20 px
+            |        |   below span
             |        |   inside app
-    ------------------------------------------
+    ----------------------------------
     tamanho |        | icon:
             |        |   width 7 px
             |        |   height 32 px
-    ------------------------------------------
+    ----------------------------------
 
   Cenário: Renderização do h5-menudropdown [caso]
   Dado que o estado da estória é [estado]
   Quando eu renderizar o [caso]
-  E eu clicar no ícone
+  E eu clicar no icone
   Então deverá ser exibido [spec]
   Exemplos:
     caso     | estado                | spec
-    ---------------------------------------------------
+    ----------------------------------------------------
     0 opcoes |                       | item:
              |                       |   absent
-    ---------------------------------------------------
-    2 opcoes | {caption: "opção 1"}, | app:
-             | {caption: "opção 2"}  |   contains itens
+    ----------------------------------------------------
+    @only
+    2 opcoes | {caption: "opção 1"}, |  app:
+             | {caption: "opção 2"}  |    contains itens
+             |                       | icon:
+             |                       |   above itens
 
 
 
   Cenário: Renderização do h5-menudropdown [caso]
   Dado que o estado da estória é [estado]
   Quando eu renderizar o [caso]
-  E eu clicar no ícone
-  E eu clicar no ícone
+  E eu clicar no icone
+  E eu clicar no icone
   Então deverá ser exibido [spec]
   Exemplos:
     caso            | estado                | spec
@@ -54,7 +57,7 @@
   Cenário: Renderização do h5-menudropdown [caso]
   Dado que o estado da estória é [estado]
   Quando eu renderizar o [caso]
-  E eu clicar no ícone
+  E eu clicar no icone
   E eu clicar no item
   Então deverá ser exibido [spec]
   Exemplos:

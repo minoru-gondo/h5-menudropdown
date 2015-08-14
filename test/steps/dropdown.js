@@ -9,7 +9,7 @@ module.exports = function (library, expect, h5_test) {
             h5_test.file('app/exemplo.js');
             h5_test.serve('app/index.html');
             h5_test.pack('app', next);
-        }).when('eu clicar no ícone', function (next) {
+        }).when('eu clicar no icone', function (next) {
             h5_test.run('test/clickIcon.js');
             next();
         }).when('eu clicar no item', function (next) {
