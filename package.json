@@ -1,6 +1,6 @@
 {
     "name": "h5-menudropdown",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "",
     "main": "src/h5-menudropdown.js",
     "scripts": {
@@ -13,7 +13,8 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "react": "^0.13.3"
+        "react": "^0.13.3",
+        "h5-dropdown": "latest"
     },
     "devDependencies": {
         "css-loader": "^0.14.4",
