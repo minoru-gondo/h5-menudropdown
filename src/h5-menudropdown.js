@@ -10,20 +10,25 @@ var H5Menudropdown = React.createClass({
     },
     mixins: [h5dropdown],
     render: function () {
-
+        var total_actions = Object.keys(this.props.actions);
+        var class_position = this.props.icon.split(' ');
+        class_position = class_position[class_position.length-1];
+        var style_desktop = {
+        marginTop: - total_actions.length * 33 + "px !important",
+        marginLeft: -20 + "px !important"
+        }
         return (React.createElement("div", {}, [React.createElement("icon", {
-                className: this.props.icon + " icon_details",
+                className: this.props.icon + " icon_details ",
                 onClick: this.toggleDropDown
             }),
-            this.isDropDown() ? React.createElement("div", {}, [this.createItensMenu()]) : null
+            this.isDropDown() ? React.createElement("div", {className: class_position, style: style_desktop}, [this.createItensMenu()]) : null
       ]));
     },
     createItensMenu: function () {
         var actions = this.props.actions;
         var itens = [];
-        var action_names;
+
         for (var action in actions) {
-            action_names = Object.keys(actions);
             itens.push(React.createElement("div", {
                 className: "h_iconDropDown_action " + action,
                 onClick: this._click
