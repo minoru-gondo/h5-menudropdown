@@ -21,15 +21,22 @@ var H5Menudropdown = React.createClass({
     createItensMenu: function () {
         var actions = this.props.actions;
         var itens = [];
+        var action_names;
         for (var action in actions) {
+            action_names = Object.keys(actions);
             itens.push(React.createElement("div", {
-                className: "h_iconDropDown_action",
-                onClick: function () {
-                    actions[action].run();
-                }
+                className: "h_iconDropDown_action " + action,
+                onClick: this._click
             }, [actions[action].labelText]));
         }
         return itens;
+    },
+
+    _click: function(action_clicked){
+        var x = action_clicked.currentTarget.className.split(' ');
+                x = x[x.length-1];
+                this.props.actions[x].run();
+                this.closeDropDown();
     }
 });
 
