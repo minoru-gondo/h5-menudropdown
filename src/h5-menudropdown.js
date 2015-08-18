@@ -1,6 +1,6 @@
 var React = require('react');
 var h5dropdown = require('h5-dropdown');
-//require('./icondropdown.less');
+require('./icondropdown.less');
 
 var i = 1;
 var H5Menudropdown = React.createClass({
@@ -12,19 +12,19 @@ var H5Menudropdown = React.createClass({
     render: function () {
 
         return (React.createElement("div", {}, [React.createElement("icon", {
-                className: this.props.icon,
+                className: this.props.icon + " icon_details",
                 onClick: this.toggleDropDown
             }),
-            this.isDropDown() ? React.createElement("ul", {}, [this.createItensMenu()]) : null
+            this.isDropDown() ? React.createElement("div", {}, [this.createItensMenu()]) : null
       ]));
     },
     createItensMenu: function () {
         var actions = this.props.actions;
         var itens = [];
-        for (action in actions) {
-            itens.push(React.createElement("li", {
+        for (var action in actions) {
+            itens.push(React.createElement("div", {
+                className: "h_iconDropDown_action",
                 onClick: function () {
-                    alert(actions[action].labelText);
                     actions[action].run();
                 }
             }, [actions[action].labelText]));
