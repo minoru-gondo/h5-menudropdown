@@ -10,18 +10,60 @@ var H5Menudropdown = React.createClass({
     },
     mixins: [h5dropdown],
     render: function () {
-        var total_actions = Object.keys(this.props.actions);
-        var class_position = this.props.icon.split(' ');
-        class_position = class_position[class_position.length-1];
-        var style_desktop = {
-        marginTop: - total_actions.length * 33 + "px !important",
-        marginLeft: -20 + "px !important"
+        var menu = Object.keys(this.props.actions);
+        var altura_menu = menu.length * 33;
+        var _body = document.querySelector("body");
+        var largura_body = _body.offsetWidth;
+        var altura_body = _body.offsetHeight;
+        var icon = this.props.icon.split(' ');
+        var _icon = document.querySelector("." + icon[1]);
+        var left_icon;
+        var top_icon;
+        var largura_icon;
+        var altura_icon;
+        var style;
+
+        if(_icon){
+        left_icon = _icon.offsetLeft;
+        top_icon = _icon.offsetTop;
+        largura_icon = _icon.offsetWidth;
+        altura_icon = _icon.offsetHeight;
+        }
+
+
+        if(top_icon <= (altura_body/2) && left_icon <= (largura_body/2)){
+            style = {
+                left: left_icon,
+                top: top_icon + altura_icon,
+                position: 'absolute'
+            }
+        }
+        if(top_icon > (altura_body/2) && left_icon <= (largura_body/2)){
+            style = {
+                left: left_icon,
+                top: top_icon - altura_menu,
+                position: 'absolute'
+            }
+        }
+        if(top_icon <= (altura_body/2) && left_icon >= (largura_body/2)){
+            style = {
+                left: left_icon - 164,
+                top: top_icon + altura_icon,
+                position: 'absolute'
+            }
+        }
+        if(top_icon > (altura_body/2) && left_icon >= (largura_body/2)){
+            style = {
+                left: left_icon - 164,
+                top: top_icon - altura_menu,
+                position: 'absolute'
+            }
         }
         return (React.createElement("div", {}, [React.createElement("icon", {
                 className: this.props.icon + " icon_details ",
                 onClick: this.toggleDropDown
             }),
-            this.isDropDown() ? React.createElement("div", {className: class_position, style: style_desktop}, [this.createItensMenu()]) : null
+            this.isDropDown() ? React.createElement("div", {style: style}, [this.createItensMenu()]) : null
       ]));
     },
     createItensMenu: function () {
