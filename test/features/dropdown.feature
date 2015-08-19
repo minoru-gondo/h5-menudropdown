@@ -33,7 +33,6 @@
     0 opcoes |                       | item:
              |                       |   absent
     ----------------------------------------------------
-    @only
     2 opcoes | {caption: "opção 1"}, |  app:
              | {caption: "opção 2"}  |    contains itens
              |                       | icon:

@@ -23,7 +23,7 @@ window.hsession = {
 //};
 
 //var mock_store = {
-//    menu: [___fields___]
+//    menu: [__fields___]
 //};
 
 var mock_store = {
