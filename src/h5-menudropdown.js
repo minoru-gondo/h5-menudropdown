@@ -10,11 +10,9 @@ var H5Menudropdown = React.createClass({
     },
     mixins: [h5dropdown],
     render: function () {
-        var menu = Object.keys(this.props.actions);
-        var altura_menu = menu.length * 33;
-        var _body = document.querySelector("body");
-        var largura_body = _body.offsetWidth;
-        var altura_body = _body.offsetHeight;
+        var _html = document.querySelector("html");
+        var largura_html = _html.offsetWidth;
+        var altura_html = _html.offsetHeight;
         var icon = this.props.icon.split(' ');
         var _icon = document.querySelector("." + icon[1]);
         var left_icon;
@@ -23,39 +21,52 @@ var H5Menudropdown = React.createClass({
         var altura_icon;
         var style;
 
+        function getOffset( elemento ) {
+            var x = 0;
+            var y = 0;
+            while( elemento && !isNaN( elemento.offsetLeft ) && !isNaN( elemento.offsetTop ) ) {
+                x += elemento.offsetLeft - elemento.scrollLeft;
+                y += elemento.offsetTop - elemento.scrollTop;
+                elemento = elemento.offsetParent;
+            }
+            return { top: y, left: x };
+        }
+        var icon_abs_pos;
+
         if(_icon){
-        left_icon = _icon.offsetLeft;
-        top_icon = _icon.offsetTop;
-        largura_icon = _icon.offsetWidth;
-        altura_icon = _icon.offsetHeight;
+            left_icon = _icon.offsetLeft;
+            top_icon = _icon.offsetTop;
+            largura_icon = _icon.offsetWidth;
+            altura_icon = _icon.offsetHeight;
+            icon_abs_pos = getOffset( _icon );
         }
 
 
-        if(top_icon <= (altura_body/2) && left_icon <= (largura_body/2)){
+        if(top_icon <= (altura_html/2) && left_icon <= (largura_html/2)){
             style = {
                 left: left_icon,
-                top: top_icon + altura_icon,
+                top: top_icon + altura_icon + 2,
                 position: 'absolute'
             }
         }
-        if(top_icon > (altura_body/2) && left_icon <= (largura_body/2)){
+        if(top_icon > (altura_html/2) && left_icon <= (largura_html/2)){
             style = {
                 left: left_icon,
-                top: top_icon - altura_menu,
+                bottom: document.documentElement.clientHeight -  icon_abs_pos.top + 2,
                 position: 'absolute'
             }
         }
-        if(top_icon <= (altura_body/2) && left_icon >= (largura_body/2)){
+        if(top_icon <= (altura_html/2) && left_icon >= (largura_html/2)){
             style = {
-                left: left_icon - 164,
-                top: top_icon + altura_icon,
+                right: document.documentElement.clientWidth - left_icon,
+                top: top_icon + altura_icon + 2,
                 position: 'absolute'
             }
         }
-        if(top_icon > (altura_body/2) && left_icon >= (largura_body/2)){
+        if(top_icon > (altura_html/2) && left_icon >= (largura_html/2)){
             style = {
-                left: left_icon - 164,
-                top: top_icon - altura_menu,
+                right: document.documentElement.clientWidth - left_icon,
+                bottom: document.documentElement.clientHeight -  icon_abs_pos.top + 2,
                 position: 'absolute'
             }
         }
