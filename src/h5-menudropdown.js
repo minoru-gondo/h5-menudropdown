@@ -41,33 +41,34 @@ var H5Menudropdown = React.createClass({
             icon_abs_pos = getOffset( _icon );
         }
 
-
-        if(top_icon <= (altura_html/2) && left_icon <= (largura_html/2)){
-            style = {
-                left: left_icon,
-                top: top_icon + altura_icon + 2,
-                position: 'absolute'
+        if(icon_abs_pos){
+            if(icon_abs_pos.top <= (altura_html/2) && icon_abs_pos.left <= (largura_html/2)){
+                style = {
+                    left: left_icon,
+                    top: top_icon + altura_icon + 6,
+                    position: 'absolute'
+                }
             }
-        }
-        if(top_icon > (altura_html/2) && left_icon <= (largura_html/2)){
-            style = {
-                left: left_icon,
-                bottom: document.documentElement.clientHeight -  icon_abs_pos.top + 2,
-                position: 'absolute'
+            if(icon_abs_pos.top > (altura_html/2) && icon_abs_pos.left <= (largura_html/2)){
+                style = {
+                    left: left_icon,
+                    bottom: document.documentElement.clientHeight -  icon_abs_pos.top + 6,
+                    position: 'absolute'
+                }
             }
-        }
-        if(top_icon <= (altura_html/2) && left_icon >= (largura_html/2)){
-            style = {
-                right: document.documentElement.clientWidth - left_icon,
-                top: top_icon + altura_icon + 2,
-                position: 'absolute'
+            if(icon_abs_pos.top <= (altura_html/2) && icon_abs_pos.left >= (largura_html/2)){
+                style = {
+                    right: document.documentElement.clientWidth - left_icon,
+                    top: top_icon + altura_icon + 6,
+                    position: 'absolute'
+                }
             }
-        }
-        if(top_icon > (altura_html/2) && left_icon >= (largura_html/2)){
-            style = {
-                right: document.documentElement.clientWidth - left_icon,
-                bottom: document.documentElement.clientHeight -  icon_abs_pos.top + 2,
-                position: 'absolute'
+            if(icon_abs_pos.top > (altura_html/2) && icon_abs_pos.left >= (largura_html/2)){
+                style = {
+                    right: document.documentElement.clientWidth - left_icon,
+                    bottom: document.documentElement.clientHeight -  icon_abs_pos.top + 6,
+                    position: 'absolute'
+                }
             }
         }
         return (React.createElement("div", {}, [React.createElement("icon", {
