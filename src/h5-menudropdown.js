@@ -44,29 +44,29 @@ var H5Menudropdown = React.createClass({
         if(icon_abs_pos){
             if(icon_abs_pos.top <= (altura_html/2) && icon_abs_pos.left <= (largura_html/2)){
                 style = {
-                    left: left_icon,
-                    top: top_icon + altura_icon + 6,
+                    left: left_icon + 15,
+                    top: top_icon + altura_icon - 10,
                     position: 'absolute'
                 }
             }
             if(icon_abs_pos.top > (altura_html/2) && icon_abs_pos.left <= (largura_html/2)){
                 style = {
-                    left: left_icon,
-                    bottom: document.documentElement.clientHeight -  icon_abs_pos.top + 6,
+                    left: left_icon + 15,
+                    bottom: document.documentElement.clientHeight -  icon_abs_pos.top - 10,
                     position: 'absolute'
                 }
             }
             if(icon_abs_pos.top <= (altura_html/2) && icon_abs_pos.left >= (largura_html/2)){
                 style = {
-                    right: document.documentElement.clientWidth - left_icon,
-                    top: top_icon + altura_icon + 6,
+                    right: document.documentElement.clientWidth - left_icon - 15,
+                    top: top_icon + altura_icon - 10,
                     position: 'absolute'
                 }
             }
             if(icon_abs_pos.top > (altura_html/2) && icon_abs_pos.left >= (largura_html/2)){
                 style = {
-                    right: document.documentElement.clientWidth - left_icon,
-                    bottom: document.documentElement.clientHeight -  icon_abs_pos.top + 6,
+                    right: document.documentElement.clientWidth - left_icon - 15,
+                    bottom: document.documentElement.clientHeight -  icon_abs_pos.top - 10,
                     position: 'absolute'
                 }
             }
