@@ -1,6 +1,6 @@
 {
     "name": "h5-menudropdown",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "",
     "main": "src/h5-menudropdown.js",
     "scripts": {
