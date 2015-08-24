@@ -41,6 +41,7 @@ var H5Menudropdown = React.createClass({
             icon_abs_pos = getOffset( _icon );
         }
 
+        _html.addEventListener("click", this.fecha_menu );
         if(icon_abs_pos){
             if(icon_abs_pos.top <= (altura_html/2) && icon_abs_pos.left <= (largura_html/2)){
                 style = {
@@ -96,6 +97,13 @@ var H5Menudropdown = React.createClass({
                 x = x[x.length-1];
                 this.props.actions[x].run();
                 this.closeDropDown();
+    },
+    fecha_menu: function(e){
+       if(this.isDropDown()) {
+           this.closeDropDown();
+       }
+        else
+           return;
     }
 });
 
